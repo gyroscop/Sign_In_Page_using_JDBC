@@ -37,7 +37,7 @@ public class RegistrationServlet extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/signin","root","3183");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/signin?useSSL=false","root","3183");
 			
 			PreparedStatement pst = con.prepareStatement("insert into users(uname,upwd, uemail,umobile) values(?,?,?,?)");
 			
@@ -51,12 +51,12 @@ public class RegistrationServlet extends HttpServlet {
 			
 			if (rowCount > 0 ) {
 				request.setAttribute("status", "success");
-				response.sendRedirect("registration.jsp");
+//				response.sendRedirect("registration.jsp");
 			}else {
 				request.setAttribute("status", "failed");
 			}
 		
-			
+			dispatcher.forward(request, response);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
