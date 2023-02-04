@@ -52,6 +52,9 @@
 									class="label-agree-term"><span><span></span></span>Remember
 									me</label>
 							</div>
+							<div class="form-group">
+								<a href="forgotPassword.jsp">Forgot Password ? </a>
+							</div>
 							<div class="form-group form-button">
 								<input type="submit" name="signin" id="signin"
 									class="form-submit" value="Log in" />
@@ -94,6 +97,12 @@
 		
 		if (status == "invalid_password"){
 			swal("Sorry","You need to provide an password to proceed","error"); 
+		}
+		if (status == "resetSuccess"){
+			swal("Congrats","Password reset successfully","success"); 
+		}
+		if (status == "resetFailed"){
+			swal("Sorry","No account is linked with the email provided","error"); 
 		}
 		
 	</script>
