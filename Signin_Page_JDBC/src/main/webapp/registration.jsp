@@ -31,25 +31,25 @@
 							<div class="form-group">
 								<label for="name"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="text" name="name" id="name" placeholder="Your Name" />
+									type="text" name="name" id="name" placeholder="Your Name" required="required"/>
 							</div>
 							<div class="form-group">
 								<label for="email"><i class="zmdi zmdi-email"></i></label> <input
-									type="email" name="email" id="email" placeholder="Your Email" />
+									type="email" name="email" id="email" placeholder="Your Email" required="required"/>
 							</div>
 							<div class="form-group">
 								<label for="pass"><i class="zmdi zmdi-lock"></i></label> <input
-									type="password" name="pass" id="pass" placeholder="Password" />
+									type="password" name="pass" id="pass" placeholder="Password" required="required"/>
 							</div>
 							<div class="form-group">
 								<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
 								<input type="password" name="re_pass" id="re_pass"
-									placeholder="Repeat your password" />
+									placeholder="Repeat your password" required="required"/>
 							</div>
 							<div class="form-group">
 								<label for="contact"><i class="zmdi zmdi-lock-outline"></i></label>
 								<input type="text" name="contact" id="contact"
-									placeholder="Contact no" />
+									placeholder="Contact no" required="required"/>
 							</div>
 							<div class="form-group">
 								<input type="checkbox" name="agree-term" id="agree-term"
@@ -88,6 +88,38 @@
 		var status = document.getElementById("status").value ;
 		if (status == "success"){
 			swal("Congrats","Your Account is created","success"); 
+		}
+		
+		
+		if (status == "invalid_name"){
+			swal("Sorry","Please provide a name","error"); 
+		}
+		
+		
+		if (status == "invalid_email"){
+			swal("Sorry","Please provide an email","error"); 
+		}
+		
+		if (status == "invalid_password"){
+			swal("Sorry","Please provide an password","error"); 
+		}
+		
+		
+		if (status == "invalid_contact"){
+			swal("Sorry","Please provide an contact no","error"); 
+		}
+		
+		
+		if (status == "invalid_repass"){
+			swal("Sorry","Please repeat the password","error"); 
+		}
+		
+		if (status == "invalid_confirm_password"){
+			swal("Sorry","Password do not match","error"); 
+		}
+		
+		if (status == "invalid_mobileno_length"){
+			swal("Sorry","Contact number should be of 10 digit","error"); 
 		}
 		
 	</script>
